@@ -1,0 +1,18 @@
+// This program constructs 3 GeoLocation objects and prints
+// information about them and the distances between them.  It is intended to be used to test whether the
+// GeoLocation class is implemented correctly.
+
+public class GeolocationClient {
+    public static void main(String[] args) {
+      GeoLocation stash = new GeoLocation(34.988889,  -106.614444); //stash
+      GeoLocation studio = new GeoLocation( 34.989978,  -106.614357); //studio
+      GeoLocation fbi = new GeoLocation( 35.131281,  -106.61263); //FBI building
+      
+      System.out.println("the stash is at " + stash.toString()); //print latitude and longitude of stash
+      System.out.println("the studio is at " + studio.toString()); //print latitude and longitude of studio
+      System.out.println("the FBI building is at " + fbi.toString()); //print latitude and longitude of FBI building
+      System.out.println("distance in miles between: "); 
+      System.out.println("stash/studio = " + stash.distanceFrom(studio)); //prints the value of the distance in miles between stash and studio
+      System.out.println("stash/FBI = " + stash.distanceFrom(fbi)); //prints the value of the distance in miles between stash and FBI building
+    }
+}
