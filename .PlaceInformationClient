@@ -1,0 +1,33 @@
+// This program constructs several PlaceInformation objects and prints
+// information about them and the distances between them and two locations
+// (London and Kane Hall).  It is intended to be used to test whether the
+// PlaceInformation class is implemented correctly.
+public class PlaceInformationClient {
+    public static void main(String[] args) {
+        PlaceInformation[] data = {new PlaceInformation("Space Needle", "Seattle Center",
+                                  "tourist", 47.6205063, -122.3492774),
+             new PlaceInformation("Husky Union Building", "4001 Stevens Way",
+                                  "restaurant", 47.6554785, -122.3050906),
+             new PlaceInformation("UW Guggenheim Hall", "UW campus",
+                                  "university, aa", 47.6545769, -122.3064568),
+             new PlaceInformation("BASIS Independent Silicon Valley", "1290 Parkmoor Ave", "School, Middle, High", 37.316156, -121.910053),
+             new PlaceInformation("Challenger School Harwood", "4949 Harwood Rd", "School, Preschool, Elementary, Middle", 37.247742, -121.914733),
+             new PlaceInformation("California’s Great America", "4701 Great America Pkwy", "Amusement_park, restaurants, stores", 37.397946, -121.974294),
+             new PlaceInformation("San Francisco International Airport", "780 S Airport Blvd", "Airport, car_rental, parking, travel_agency", 37.635855, -122.400194),
+             new PlaceInformation("Santana Row", "377 Santana Row, San Jose", "Book_store, clothing_store, department_store, hair_care, home_goods_store, jewelry_store, restaurants", 37.319901, -121.948339),
+             new PlaceInformation("Universal Studios Hollywood", "100 Universal City Plaza", "Amusement_park, restaurants, stores", 34.136192, -118.352016)};
+
+        GeoLocation london = new GeoLocation(51.5112139, -0.1198244);
+        GeoLocation kane = new GeoLocation(47.6566273, -122.3091503);
+
+        for (PlaceInformation info : data) {
+            System.out.println("name    : " + info.getName());
+            System.out.println("address : " + info.getAddress());
+            System.out.println("tags    : " + info.getTag());
+            System.out.println("toString: " + info);
+            System.out.println("London  : " + info.distanceFrom(london));
+            System.out.println("Kane    : " + info.distanceFrom(kane));
+            System.out.println();
+        }
+    }
+}
